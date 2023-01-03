@@ -1,0 +1,111 @@
+<mat-card [formGroup]="mainForm" class="main-form">
+	<mat-card-title>Inscription</mat-card-title>
+	<!-- <mat-hint>Tous les champs de ce formulaires sont requis</mat-hint> -->
+
+	<div class="form-card" formGroupName="personalInfo">
+		<mat-card-subtitle>Informations Personelles</mat-card-subtitle>
+		<div class="form-row">
+			<mat-form-field appearance="fill">
+				<mat-label>Prénom</mat-label>
+				<input matInput formControlName="firstName" type="text" />
+				<mat-error>Ce champs est requis</mat-error>
+			</mat-form-field>
+			<mat-form-field appearance="fill">
+				<mat-label>Nom</mat-label>
+				<input matInput formControlName="lastName" type="text" />
+				<mat-error>Ce champs est requis</mat-error>
+			</mat-form-field>
+		</div>
+	</div>
+
+	<div class="form-card">
+		<mat-card-subtitle>Préférences de contact</mat-card-subtitle>
+		<mat-radio-group [formControl]="contactPreferenceCtrl">
+			<mat-radio-button value="email">Par email</mat-radio-button>
+			<mat-radio-button value="phone">Par téléphone</mat-radio-button>
+		</mat-radio-group>
+	</div>
+
+	<div
+		class="form-card"
+		[formGroup]="emailForm"
+		*ngIf="showEmailCtrl$ | async"
+	>
+		<mat-card-subtitle
+			>Email
+			<small class="error-text" *ngIf="showEmailError$ | async">
+				( Les deux adresses email ne correspondent pas )
+			</small>
+		</mat-card-subtitle>
+		<div class="form-row">
+			<mat-form-field appearance="fill">
+				<mat-label>Adresse mail</mat-label>
+				<input matInput formControlName="email" type="text" />
+				<mat-error>{{ getFormControlErrorText(emailCtrl) }}</mat-error>
+			</mat-form-field>
+			<mat-form-field appearance="fill">
+				<mat-label>Confirmer votre adresse mail</mat-label>
+				<input matInput formControlName="confirmEmail" type="text" />
+				<mat-error>
+					{{ getFormControlErrorText(confirmEmailCtrl) }}
+				</mat-error>
+				<!-- <input matInput [formControl]="confirmEmailCtrl" type="text"/> -->
+				<!-- Les versions nommées créent une plus forte dépendance sinon les deux solutions sont équivalentes-->
+			</mat-form-field>
+		</div>
+	</div>
+
+	<div class="form-card" *ngIf="showPhoneCtrl$ | async">
+		<mat-card-subtitle>Téléphone</mat-card-subtitle>
+		<mat-form-field appearance="fill">
+			<mat-label>Numéro de téléphone</mat-label>
+			<input matInput formControlName="phone" type="text" />
+			<mat-error>{{ getFormControlErrorText(phoneCtrl) }}</mat-error>
+		</mat-form-field>
+	</div>
+
+	<div class="form-card" [formGroup]="loginInfoForm">
+		<mat-card-subtitle
+			>Informations de connexion
+			<small class="error-text" *ngIf="showPasswordError$ | async"
+				>( Les deux mots de passe ne correspondent pas )</small
+			>
+		</mat-card-subtitle>
+		<mat-form-field appearance="fill">
+			<mat-label>Username</mat-label>
+			<input matInput formControlName="username" type="text" />
+		</mat-form-field>
+		<div class="form-row">
+			<mat-form-field appearance="fill">
+				<mat-label>Mot de passe</mat-label>
+				<input matInput formControlName="password" type="password" />
+			</mat-form-field>
+			<mat-form-field appearance="fill">
+				<mat-label>Confirmer votre mot de passe</mat-label>
+				<input
+					matInput
+					[formControl]="confirmPasswordlCtrl"
+					type="password"
+				/>
+			</mat-form-field>
+		</div>
+	</div>
+
+	<mat-card-actions *ngIf="mainForm.valid">
+		<button
+			mat-flat-button
+			color="primary"
+			(click)="onSubmitForm()"
+			[disabled]="loading"
+		>
+			ENREGISTRER
+		</button>
+	</mat-card-actions>
+
+	<mat-spinner
+		class="loading"
+		*ngIf="loading"
+		color="primary"
+		mode="indeterminate"
+	></mat-spinner>
+</mat-card>

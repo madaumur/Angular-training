@@ -1,0 +1,41 @@
+.main-form {
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 30px;
+	position: relative;
+}
+
+.form-card {
+	padding: 10px;
+}
+
+.form-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+mat-form-field {
+	width: 48%;
+	// &.full-width {
+	// 	width: 80%;
+	// 	margin-left: 10%;
+	// }
+}
+
+mat-radio-button {
+	padding: 10px;
+}
+
+mat-card-actions {
+	align-self: center;
+}
+
+.loading {
+	align-self: center;
+}
+
+.error-text {
+	font-weight: 100;
+	font-size: small;
+	color: red;
+}
