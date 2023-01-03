@@ -1,6 +1,6 @@
 # Angular-Course-3
 
-_( Here is an implementation of the Angular course from Will Alexander on OpenClassroom )_
+_( Here is an implementation of an Angular course from Will Alexander on OpenClassroom )_
 
 ## Backend
 
