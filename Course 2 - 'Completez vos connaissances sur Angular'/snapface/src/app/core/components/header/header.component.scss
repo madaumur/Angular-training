@@ -1,0 +1,36 @@
+$darkgrey-accent: #242424;
+$primary-color: #d6d6d6;
+
+header {
+	text-align: center;
+	background-color: $darkgrey-accent;
+	margin-bottom: 20px;
+	padding: 10px;
+
+	a {
+		margin: 0 10px;
+		color: $primary-color;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	button {
+		margin: 0 10px;
+		color: $primary-color;
+		background-color: $darkgrey-accent;
+		border: none;
+
+		&:hover {
+			border: white solid 1px;
+		}
+	}
+
+	.active {
+		border: 1px solid;
+		padding: 4px;
+		color: white;
+	}
+}

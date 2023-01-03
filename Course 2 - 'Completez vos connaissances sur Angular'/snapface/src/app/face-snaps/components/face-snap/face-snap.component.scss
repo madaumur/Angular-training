@@ -1,0 +1,22 @@
+$darkgrey-accent: #242424;
+$primary-color: #d6d6d6;
+
+.face-snap-card {
+	:hover {
+		cursor: pointer;
+	}
+
+	box-sizing: border-box;
+	width: 60%;
+	margin: 20px auto;
+	padding: 10px 30px;
+	background-color: $darkgrey-accent;
+	box-shadow: $darkgrey-accent 3px 3px 7px;
+
+
+	img {
+		display: inline-block;
+		width: 30%;
+		margin-top: 20px;
+	}
+}

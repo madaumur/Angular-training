@@ -1,0 +1,56 @@
+$darkgrey-accent: #242424;
+$primary-color: #d6d6d6;
+
+.face-snap-card {
+	box-sizing: border-box;
+	width: 60%;
+	margin: 20px auto;
+	padding: 10px 30px;
+	box-sizing: border-box;
+	background-color: $darkgrey-accent;
+	box-shadow: $darkgrey-accent 3px 3px 7px;
+
+	img {
+		width: 100%;
+	}
+
+	h2 {
+		margin-bottom: 0;
+	}
+
+	p {
+		font-weight: 300;
+		font-size: 16px;
+	}
+
+	button {
+		background-color: transparent;
+		box-sizing: border-box;
+		padding: 5px 10px;
+		border: none;
+		box-shadow: $darkgrey-accent 3px 3px 7px;
+		color: $primary-color;
+		margin-right: 20px;
+		outline: none;
+		font-size: 14px;
+		font-weight: 500;
+
+		&:active {
+			transform: translate(1px, 1px);
+			box-shadow: lightgray 0 0 5px;
+		}
+	}
+}
+
+.snapped {
+	background-color: rgba(darkgreen, 0.05);
+	color: lightgreen;
+
+	button {
+		color: lightgreen;
+
+		&:active {
+			box-shadow: lightgreen 0 0 5px;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+<form #emailForm="ngForm" (ngSubmit)="onSubmitForm(emailForm)">
+	<label for="emailInput">login :</label>
+	<input
+		id="emailInput"
+		name="userEmail"
+		type="email"
+		[(ngModel)]="userEmail"
+	/>
+	<button type="submit">submit</button>
+</form>
+<div class="landing-block">
+	<img
+		src="https://www.pngkey.com/png/full/116-1160790_rpi-logo-white-screen-crowne-plaza-white-logo.png"
+		alt="Snapface logo"
+	/>
+	<div class="landing-links">
+		<button (click)="onContinue()">Continuer vers Snapface</button>
+	</div>
+</div>
